@@ -91,16 +91,16 @@
                     var d = data[i];
                     var subtitle = d3.select("h3")
                     .text("Year: " + d["Year"]);
-                    r1.transition().attr("points", (1*dim/15) + "," + (dim/2) + " " + (1*dim/15) + "," + (dim/2 - (parseInt(d["Single"].replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2 - (parseInt(d["Single"].replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2) ).duration(500);
+                    r1.transition().attr("points", (1*dim/15) + "," + (dim/2) + " " + (1*dim/15) + "," + (dim/2 - (parseInt((d["Single"]).replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2 - (parseInt(d["Single"].replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2) ).duration(500);
                     r2.transition().attr("points", (3*dim/15) + "," + (dim/2) + " " + (3*dim/15) + "," + (dim/2 - (parseInt(d["Married"].replace(/,/g, ""))/8000)*dim/2) + " " + (4*dim/15) + "," + (dim/2 - (parseInt(d["Married"].replace(/,/g, ""))/8000)*dim/2) + " " + (4*dim/15) + "," + (dim/2) ).duration(500);
                     r3.transition().attr("points", (5*dim/15) + "," + (dim/2) + " " + (5*dim/15) + "," + (dim/2 - (parseInt(d["Dependent"].replace(/,/g, ""))/4000)*dim/2) + " " + (6*dim/15) + "," + (dim/2 - (parseInt(d["Dependent"].replace(/,/g, ""))/4000)*dim/2) + " " + (6*dim/15) + "," + (dim/2) ).duration(500);
                     r4.transition().attr("points", (7*dim/15) + "," + (dim/2) + " " + (7*dim/15) + "," + (dim/2 - (parseInt(d["LowRate"].replace(/,/g, ""))/23)*dim/2) + " " + (8*dim/15) + "," + (dim/2 - (parseInt(d["LowRate"].replace(/,/g, ""))/23)*dim/2) + " " + (8*dim/15) + "," + (dim/2) ).duration(500);
                     r5.transition().attr("points", (9*dim/15) + "," + (dim/2) + " " + (9*dim/15) + "," + (dim/2 - (parseInt(d["Under"].replace(/,/g, ""))/43850)*dim/2) + " " + (10*dim/15) + "," + (dim/2 - (parseInt(d["Under"].replace(/,/g, ""))/43850)*dim/2) + " " + (10*dim/15) + "," + (dim/2) ).duration(500);
                     r6.transition().attr("points", (11*dim/15) + "," + (dim/2) + " " + (11*dim/15) + "," + (dim/2 - (parseInt(d["HighRate"].replace(/,/g, ""))/94)*dim/2) + " " + (12*dim/15) + "," + (dim/2 - (parseInt(d["HighRate"].replace(/,/g, ""))/94)*dim/2) + " " + (12*dim/15) + "," + (dim/2) ).duration(500);
                     r7.transition().attr("points", (13*dim/15) + "," + (dim/2) + " " + (13*dim/15) + "," + (dim/2 - (parseInt(d["Over"].replace(/,/g, ""))/5000000)*dim/2) + " " + (14*dim/15) + "," + (dim/2 - (parseInt(d["Over"].replace(/,/g, ""))/5000000)*dim/2) + " " + (14*dim/15) + "," + (dim/2) ).duration(500);
+                    setTimeout(console.log(" "), 500);
                 }
 
-                    setTimeout(var x = 0, 500);
             });
         }
 
