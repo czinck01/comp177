@@ -86,7 +86,6 @@
         function display() {
             d3.tsv("data/data.tsv", function(data) {
 
-                var data = [{Dependent: "0", HighRate: "7.0", LowRate: "1.0", Married: "4,000", Over: "500,000", Single: "3,000", Under: "20,000", Year: "1915"}, {Dependent: "0", HighRate: "15.0", LowRate: "2.0", Married: "4,000", Over: "2,000,000", Single: "3,000", Under: "20,000", Year: "1916"}];
                 console.log(data);
                 for (var i = 0; i < data.length; i++) {
                     var d = data[i];
