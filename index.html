@@ -116,49 +116,56 @@
             .text("YOLO")
             .attr("x", 1*dim/15)
             .attr("y", dim/2)
-            .attr("fill", "white");
+            .attr("fill", "white")
+            .attr("font-size", "12px");            
 
         var t2 = svg.append("text")
             .attr("id", "t2")
             .text("YOLO")
             .attr("x", 3*dim/15)
             .attr("y", dim/2)
-            .attr("fill", "white");
+            .attr("fill", "white")
+            .attr("font-size", "12px");            
 
         var t3 = svg.append("text")
             .attr("id", "t3")
             .text("YOLO")
             .attr("x", 5*dim/15)
             .attr("y", dim/2)
-            .attr("fill", "white");
+            .attr("fill", "white")
+            .attr("font-size", "12px");            
 
         var t4 = svg.append("text")
             .attr("id", "t4")
             .text("YOLO")
             .attr("x", 7*dim/15)
             .attr("y", dim/2)
-            .attr("fill", "white");
+            .attr("fill", "white")
+            .attr("font-size", "12px");            
 
         var t5 = svg.append("text")
             .attr("id", "t5")
             .text("YOLO")
             .attr("x", 9*dim/15)
             .attr("y", dim/2)
-            .attr("fill", "white");
+            .attr("fill", "white")
+            .attr("font-size", "12px");            
 
         var t6 = svg.append("text")
             .attr("id", "t6")
             .text("YOLO")
             .attr("x", 11*dim/15)
             .attr("y", dim/2)
-            .attr("fill", "white");
+            .attr("fill", "white")
+            .attr("font-size", "12px");            
 
         var t7 = svg.append("text")
             .attr("id", "t7")
             .text("YOLO")
             .attr("x", 13*dim/15)
             .attr("y", dim/2)
-            .attr("fill", "white");
+            .attr("fill", "white")
+            .attr("font-size", "12px");            
 
         var button = d3.select('button')
         .text("Play")
@@ -169,13 +176,13 @@
     
         function update(d) {
             d3.select("h3").text("Year: " + d["Year"]);
-            d3.select('#t1').text(d["Single"]);
-            d3.select('#t2').text(d["Married"]);
-            d3.select('#t3').text(d["Dependent"]);
-            d3.select('#t4').text(d["LowRate"]);
-            d3.select('#t5').text(d["Under"]);
-            d3.select('#t6').text(d["HighRate"]);
-            d3.select('#t7').text(d["Over"]);
+            d3.select('#t1').text("$" + d["Single"]);
+            d3.select('#t2').text("$" + d["Married"]);
+            d3.select('#t3').text("$" + d["Dependent"]);
+            d3.select('#t4').text(d["LowRate"] + "%");
+            d3.select('#t5').text("$" + d["Under"]);
+            d3.select('#t6').text(d["HighRate"] + "%");
+            d3.select('#t7').text("$" + d["Over"]);
             r1.transition().attr("points", (1*dim/15) + "," + (dim/2) + " " + (1*dim/15) + "," + (dim/2 - (parseInt((d["Single"]).replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2 - (parseInt(d["Single"].replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2) ).duration(500);
             r2.transition().attr("points", (3*dim/15) + "," + (dim/2) + " " + (3*dim/15) + "," + (dim/2 - (parseInt(d["Married"].replace(/,/g, ""))/8000)*dim/2) + " " + (4*dim/15) + "," + (dim/2 - (parseInt(d["Married"].replace(/,/g, ""))/8000)*dim/2) + " " + (4*dim/15) + "," + (dim/2) ).duration(500);
             r3.transition().attr("points", (5*dim/15) + "," + (dim/2) + " " + (5*dim/15) + "," + (dim/2 - (parseInt(d["Dependent"].replace(/,/g, ""))/4000)*dim/2) + " " + (6*dim/15) + "," + (dim/2 - (parseInt(d["Dependent"].replace(/,/g, ""))/4000)*dim/2) + " " + (6*dim/15) + "," + (dim/2) ).duration(500);
