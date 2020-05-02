@@ -1,1 +1,69 @@
-<h1>Federal Income Tax Brackets Throughout History</h1>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Income Tax History</title>
+    <style>
+        body {
+            background-color:coral;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            margin-bottom: -20px;
+        }
+
+        h3 {
+            color: white;
+            margin-bottom: -20px;
+        }
+    
+        svg {
+            display: block;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px
+        }
+        
+        button {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1></br>
+    <h3></h3>
+    <svg></svg>
+    <button></button>
+    <script src="js/d3.v4.min.js"></script>
+    <script>
+        
+        d3.text("data/data.csv", function(data) {
+            console.log(data);
+        });
+
+        var d = 500;
+
+        var title = d3.select("h1")
+        .text("Federal Income Tax Brackets Throughout History")
+        .attr("align", "center");
+
+        var subtitle = d3.select("h3")
+        .text("Filed as Single")
+        .attr("align", "center");
+
+        var svg = d3.select('svg')
+        .attr('width', 2*d)
+        .attr('height', d)
+        .style('background-color', 'white');    
+
+        var button = d3.select('button')
+        .text("Play")
+        .attr("onclick", "display();");
+
+        function display() {
+            
+        }
+    </script>
+</body>
+</html>
