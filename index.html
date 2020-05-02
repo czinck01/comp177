@@ -38,19 +38,13 @@
     <script src="js/d3.v4.min.js"></script>
     <script>
         
-        d3.tsv("data/data.tsv", function(data) {
-            console.log(data);
-        });
-
         var d = 500;
 
         var title = d3.select("h1")
-        .text("Federal Income Tax Brackets Throughout History")
-        .attr("align", "center");
+        .text("Federal Income Tax Brackets Throughout History");
 
         var subtitle = d3.select("h3")
-        .text("Filed as Single")
-        .attr("align", "center");
+        .text("Year:");
 
         var svg = d3.select('svg')
         .attr('width', 2*d)
@@ -62,8 +56,11 @@
         .attr("onclick", "display();");
 
         function display() {
-            
+            d3.tsv("data/data.tsv", function(data) {
+                console.log(data);
+            });
         }
+
     </script>
 </body>
 </html>
