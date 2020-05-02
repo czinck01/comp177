@@ -83,24 +83,24 @@
         .text("Play")
         .attr("onclick", "display();");
 
-        function update(data, i) {
-            var d = data[i];
-            r1.transition().attr("points", (1*dim/15) + "," + (dim/2) + " " + (1*dim/15) + "," + (dim/2 - (parseInt((d["Single"]).replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2 - (parseInt(d["Single"].replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2) ).duration(500*i);
-            r2.transition().attr("points", (3*dim/15) + "," + (dim/2) + " " + (3*dim/15) + "," + (dim/2 - (parseInt(d["Married"].replace(/,/g, ""))/8000)*dim/2) + " " + (4*dim/15) + "," + (dim/2 - (parseInt(d["Married"].replace(/,/g, ""))/8000)*dim/2) + " " + (4*dim/15) + "," + (dim/2) ).duration(500*i);
-            r3.transition().attr("points", (5*dim/15) + "," + (dim/2) + " " + (5*dim/15) + "," + (dim/2 - (parseInt(d["Dependent"].replace(/,/g, ""))/4000)*dim/2) + " " + (6*dim/15) + "," + (dim/2 - (parseInt(d["Dependent"].replace(/,/g, ""))/4000)*dim/2) + " " + (6*dim/15) + "," + (dim/2) ).duration(500*i);
-            r4.transition().attr("points", (7*dim/15) + "," + (dim/2) + " " + (7*dim/15) + "," + (dim/2 - (parseInt(d["LowRate"].replace(/,/g, ""))/23)*dim/2) + " " + (8*dim/15) + "," + (dim/2 - (parseInt(d["LowRate"].replace(/,/g, ""))/23)*dim/2) + " " + (8*dim/15) + "," + (dim/2) ).duration(500*i);
-            r5.transition().attr("points", (9*dim/15) + "," + (dim/2) + " " + (9*dim/15) + "," + (dim/2 - (parseInt(d["Under"].replace(/,/g, ""))/43850)*dim/2) + " " + (10*dim/15) + "," + (dim/2 - (parseInt(d["Under"].replace(/,/g, ""))/43850)*dim/2) + " " + (10*dim/15) + "," + (dim/2) ).duration(500*i);
-            r6.transition().attr("points", (11*dim/15) + "," + (dim/2) + " " + (11*dim/15) + "," + (dim/2 - (parseInt(d["HighRate"].replace(/,/g, ""))/94)*dim/2) + " " + (12*dim/15) + "," + (dim/2 - (parseInt(d["HighRate"].replace(/,/g, ""))/94)*dim/2) + " " + (12*dim/15) + "," + (dim/2) ).duration(500*i);
-            r7.transition().attr("points", (13*dim/15) + "," + (dim/2) + " " + (13*dim/15) + "," + (dim/2 - (parseInt(d["Over"].replace(/,/g, ""))/5000000)*dim/2) + " " + (14*dim/15) + "," + (dim/2 - (parseInt(d["Over"].replace(/,/g, ""))/5000000)*dim/2) + " " + (14*dim/15) + "," + (dim/2) ).duration(500*i);
+        function update(d) {
+            d3.select("h3").text("Year: " + d["Year"]);
+            r1.transition().attr("points", (1*dim/15) + "," + (dim/2) + " " + (1*dim/15) + "," + (dim/2 - (parseInt((d["Single"]).replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2 - (parseInt(d["Single"].replace(/,/g, ""))/4000)*dim/2) + " " + (2*dim/15) + "," + (dim/2) ).duration(500);
+            r2.transition().attr("points", (3*dim/15) + "," + (dim/2) + " " + (3*dim/15) + "," + (dim/2 - (parseInt(d["Married"].replace(/,/g, ""))/8000)*dim/2) + " " + (4*dim/15) + "," + (dim/2 - (parseInt(d["Married"].replace(/,/g, ""))/8000)*dim/2) + " " + (4*dim/15) + "," + (dim/2) ).duration(500);
+            r3.transition().attr("points", (5*dim/15) + "," + (dim/2) + " " + (5*dim/15) + "," + (dim/2 - (parseInt(d["Dependent"].replace(/,/g, ""))/4000)*dim/2) + " " + (6*dim/15) + "," + (dim/2 - (parseInt(d["Dependent"].replace(/,/g, ""))/4000)*dim/2) + " " + (6*dim/15) + "," + (dim/2) ).duration(500);
+            r4.transition().attr("points", (7*dim/15) + "," + (dim/2) + " " + (7*dim/15) + "," + (dim/2 - (parseInt(d["LowRate"].replace(/,/g, ""))/23)*dim/2) + " " + (8*dim/15) + "," + (dim/2 - (parseInt(d["LowRate"].replace(/,/g, ""))/23)*dim/2) + " " + (8*dim/15) + "," + (dim/2) ).duration(500);
+            r5.transition().attr("points", (9*dim/15) + "," + (dim/2) + " " + (9*dim/15) + "," + (dim/2 - (parseInt(d["Under"].replace(/,/g, ""))/43850)*dim/2) + " " + (10*dim/15) + "," + (dim/2 - (parseInt(d["Under"].replace(/,/g, ""))/43850)*dim/2) + " " + (10*dim/15) + "," + (dim/2) ).duration(500);
+            r6.transition().attr("points", (11*dim/15) + "," + (dim/2) + " " + (11*dim/15) + "," + (dim/2 - (parseInt(d["HighRate"].replace(/,/g, ""))/94)*dim/2) + " " + (12*dim/15) + "," + (dim/2 - (parseInt(d["HighRate"].replace(/,/g, ""))/94)*dim/2) + " " + (12*dim/15) + "," + (dim/2) ).duration(500);
+            r7.transition().attr("points", (13*dim/15) + "," + (dim/2) + " " + (13*dim/15) + "," + (dim/2 - (parseInt(d["Over"].replace(/,/g, ""))/5000000)*dim/2) + " " + (14*dim/15) + "," + (dim/2 - (parseInt(d["Over"].replace(/,/g, ""))/5000000)*dim/2) + " " + (14*dim/15) + "," + (dim/2) ).duration(500);
         }
 
         function display() {
             d3.tsv("data/data.tsv", function(data) {
+                var data = [{Dependent: "2000", HighRate: "47", LowRate: "11.5", Married: "4000", Over: "2500000", Single: "2000", Under: "21925", Year: "1915"}, {Dependent: "4000", HighRate: "94.0", LowRate: "23.0", Married: "8000", Over: "5000000", Single: "4000", Under: "43850", Year: "1916"}, {Dependent: "0", HighRate: "0", LowRate: "0", Married: "0", Over: "0", Single: "0", Under: "0", Year: "1917"}];
                 console.log(data);
                 for (var i = 0; i < data.length; i++) {
                     var d = data[i];
-                    setTimeout(update, 500, data, i);
-                    d3.select("h3").text("Year: " + d["Year"]);
+                    setTimeout(update, 500*i, d);
                 }
 
             });
